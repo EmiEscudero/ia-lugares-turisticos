@@ -1,0 +1,2 @@
+# Preserve the bytes identified by the experiment's SHA-256 manifest digest.
+experiments/pilot/manifest.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
