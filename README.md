@@ -6,7 +6,7 @@ Recognize a **destination and its state** from a photograph. The new `tourist_pl
 
 Read [the project review](docs/REVIEW.md) before interpreting the original accuracy numbers. They describe beach-versus-town accuracy, not correct-place accuracy.
 
-The [real-data pilot](docs/EXPERIMENTS.md) covers **164 destinations** after deduplication and conflict quarantine. The selected model achieves **31.6% test top-1 / 54.5% top-5**, versus **1.9% / 11.5%** for an adapted original-CNN baseline on the same 209 test photos. This is an exploratory comparison, not coverage of all 480 source destinations. Training photos and weights remain local; cloning the code does not download a trained model.
+The [real-data pilot](docs/EXPERIMENTS.md) covers **164 destinations** after deduplication and conflict quarantine. The selected model achieves **31.6% test top-1 / 54.5% top-5**, versus **1.9% / 11.5%** for an adapted original-CNN baseline on the same 209 test photos. This is an exploratory comparison, not coverage of all 480 source destinations. Training photos remain private, and trained weights are excluded from Git; cloning the code does not download a trained model. The prepared cloud deployment obtains sanitized model assets from a GitHub release.
 
 ## Setup on Windows / RTX 4060
 
@@ -23,7 +23,7 @@ The last command should print `True` and the NVIDIA GPU name. For a different pl
 
 ## Prepare images
 
-Download and extract the [original Drive collection](https://drive.google.com/drive/folders/1FUr-DQeQ1a8i5bTJdQ8Ac3IAlSBplCmS). Place both category folders inside one source folder, for example:
+Supply an authorized local copy of the training image collection. Private download links are not published in the current documentation. Removing those links does not change Drive access permissions; earlier Git commits may retain previous links. Place both category folders inside one source folder, for example:
 
 ```text
 data/raw/
@@ -96,14 +96,31 @@ The original `predictGUI.py` still loads the historical `modeloCNN.pth`. Use the
 ## Local Streamlit interface
 
 ```powershell
-.\.venv\Scripts\python.exe -m streamlit run app.py
+.\.venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1
 ```
 
 Open [the local app](http://127.0.0.1:8501). It defaults to **Spanish**; use **Idioma / Language** at the top to switch to English. Direct links can select [Spanish](http://127.0.0.1:8501/?lang=es) or [English](http://127.0.0.1:8501/?lang=en). Changing language keeps the selected photo, model, threshold, and prediction.
 
-Upload a JPEG, PNG, or WebP photo, then choose **Encontrar este lugar / Find this place**. The app shows ranked destinations and states, percentage scores, uncertain matches, downloadable results, the model's measured quality, and its destination coverage. Trained models under `runs/<name>/best.pt` are discovered automatically when refreshed. Smoke models are excluded; a local `runs/recommended/best.pt` takes priority when available. Optional examples under `data/ui_examples/` should come from training or validation, never from the held-out test set.
+Upload a JPEG, PNG, or WebP photo, then choose **Encontrar este lugar / Find this place**. The app shows ranked destinations and states, percentage scores, uncertain matches, downloadable results, the model's measured quality, and its destination coverage. Trained models under `runs/<name>/best.pt` are discovered when refreshed. Smoke models are excluded. Optional examples under `data/ui_examples/` should come from training or validation, never from the held-out test set.
 
-The server binds only to this computer. Uploads stay in memory and are not saved by the application. A small local component provides accessible Spanish/English upload controls, without external scripts or persistent browser storage. The server also validates file size, decoded format, and pixel count. Inference runs on CPU to leave the GPU free for training. Model caching includes the checkpoint modification time, so replacing a checkpoint does not reuse stale weights. The original Drive folder is only a data source; the interface has no Drive editing capability.
+The four pilot variants appear in a fixed order, by **validation macro-F1, highest first**:
+
+| Order | Model | Purpose | Validation macro-F1 |
+| --- | --- | --- | ---: |
+| 1 | Stable fine-tuning · `stable_transfer_pilot` | Recommended and selected by default; adapts EfficientNet with fixed BatchNorm statistics. | 0.310 |
+| 2 | Frozen features · `frozen_pilot` | Trains the classifier while keeping the pretrained feature network fixed. | 0.287 |
+| 3 | Initial fine-tuning · `transfer_pilot` | Initial comparison with updated BatchNorm statistics and convolution autotuning. | 0.228 |
+| 4 | Adapted original CNN · `legacy_pilot` | Baseline trained from scratch using the original CNN design. | 0.029 |
+
+These numbers identify the **option order**, not accuracy or a prediction score. `runs/recommended/best.pt` is a local copy of the selected stable model, not a fifth model. A verified matching copy is used for the first option. Additional runs appear after known variants, sorted by name. The model picker is visible on the main page; **About the model** explains each variant and compares its measurements. Selection used validation before the test evaluation; the recommended model is not changed to favor the highest observed test score.
+
+**About the model** also shows a description and two diagrams that change with the selected model: how its training and evaluation were organized, and how an uploaded photo becomes ranked predictions. The diagrams distinguish EfficientNet's pretrained features and 224-pixel input from the original CNN's 128-pixel input and training from scratch. Pilot data counts are shown only for a checkpoint with the recorded pilot split identity. These are schematic process explanations, not visual explanations of which pixels influenced a particular prediction.
+
+The local command above binds the server only to this computer. Uploads stay in memory and are not saved by the application. A small local component provides accessible Spanish/English upload controls, without external scripts or persistent browser storage. The server also validates file size, decoded format, and pixel count. Inference runs on CPU to leave the GPU free for training. Model caching includes the checkpoint modification time, so replacing a checkpoint does not reuse stale weights. The original Drive folder is a private data source; the interface has no Drive editing capability.
+
+The cloud deployment is prepared to use `cloud/streamlit_app.py` from the development branch `codex/improve-place-recognition`, with Python 3.13 and separate CPU-only dependencies. It downloads four sanitized model assets from a GitHub release and verifies each against its pinned SHA-256 digest. Weights remain outside Git, and no source photos are uploaded for deployment. See [deployment instructions](docs/DEPLOYMENT.md) for the configuration and release assets.
+
+**The `main` branch is not required**: Streamlit Community Cloud lets you select a repository, branch, and entrypoint, as its [official deployment guide](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy) explains. The local command above continues to serve only on localhost; running it does not publish the app or send changes to GitHub.
 
 ## Checks
 
@@ -112,4 +129,4 @@ The server binds only to this computer. Uploads stay in memory and are not saved
 node --test tests/uploader.test.cjs
 ```
 
-The 27 Python checks cover data integrity, metrics, saved model compatibility, upload validation, missing/broken model states, bilingual copy, and preserved predictions across language changes. Four additional browser-component checks (Node.js, optional for using the app) cover upload events, language changes, file limits, clearing, and overlapping reads. Images, environments, downloaded weights, and trained checkpoints are excluded from Git. The real-data pilot's split and measurement evidence are committed under `experiments/pilot/`.
+The Python checks cover data integrity, metrics, saved model compatibility, upload validation, missing/broken model states, stable model ordering and verified aliases, model explanations, bilingual copy, and preserved predictions across language changes. Four additional browser-component checks (Node.js, optional for using the app) cover upload events, language changes, file limits, clearing, and overlapping reads. Images, environments, downloaded weights, and trained checkpoints are excluded from Git. Aggregate pilot measurements and the destination mapping are published under `experiments/pilot/`. Detailed image manifests, source inventories, and per-image preparation reports are kept locally because they can include private source identifiers.

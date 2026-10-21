@@ -30,8 +30,8 @@ Under `PLAYAS/QUINTANA_ROO/TULUM`:
 
 | Training file | Validation file | SHA-256 (same for both files) |
 | --- | --- | --- |
-| [tulum-beach2.jpg](https://drive.google.com/file/d/1N5SfNlQnEpht9Vf4dGldQewCTc78R1V6/view) | [tulum-beach-iii2.jpg](https://drive.google.com/file/d/1UqFfpNXzxTW33FzPpsrTA_HX8J36rzSH/view) | `0f2ff7be03c1e35538a1c53767a75266820494162cefc01114543bd66a9b3b84` |
-| [espejo (2).jpg](https://drive.google.com/file/d/1wQwugljmUzg9aSL8MYQc-f6c6VqfLmUM/view) | [espejo (14).jpg](https://drive.google.com/file/d/1bFbDtoAMYt43McbATdeYNkrGVhDu4Pqy/view) | `7776ad195669a372d25c4c0c6f119ca8186753e32dc9780ac4cf7a517419cf09` |
+| `tulum-beach2.jpg` | `tulum-beach-iii2.jpg` | `0f2ff7be03c1e35538a1c53767a75266820494162cefc01114543bd66a9b3b84` |
+| `espejo (2).jpg` | `espejo (14).jpg` | `7776ad195669a372d25c4c0c6f119ca8186753e32dc9780ac4cf7a517419cf09` |
 
 All four images are 1600 × 1200 pixels. Visual inspection also confirms that the second pair depicts the mirrored scene from the first pair. The original and mirrored files differ slightly after JPEG encoding, which is why filename checks and byte hashes alone are insufficient. These samples prove leakage in the Drive split; they do not establish the total amount of leakage or exactly which renamed CSV files they became.
 
@@ -51,7 +51,7 @@ The local machine reports an NVIDIA GeForce RTX 4060 with 8,188 MiB available GP
 
 ## Validation of the new workflow
 
-- 27 Python regression checks and four JavaScript component checks passed, including Spanish/English state preservation. Environment: Python 3.13.2, PyTorch 2.11.0+cu128, TorchVision 0.26.0+cu128, Pillow 12.3.0, Streamlit 1.66.0.
+- Python regression checks and four JavaScript component checks passed, including Spanish/English state preservation. Environment: Python 3.13.2, PyTorch 2.11.0+cu128, TorchVision 0.26.0+cu128, Pillow 12.3.0, Streamlit 1.66.0.
 - A two-epoch smoke test with official pretrained EfficientNet-B0 weights and 24 synthetic images completed on the RTX 4060, using CUDA mixed precision, two Windows data-loader workers, a frozen-backbone epoch, and an unfrozen fine-tuning epoch.
 - The saved checkpoint was reloaded for GPU test-split evaluation and CPU prediction. The low-confidence path returned destination candidates marked uncertain.
 - The actual four downloaded Drive sample files were all grouped into one independent scene by the new content/mirror checks.

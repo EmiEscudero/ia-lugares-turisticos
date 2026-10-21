@@ -1,11 +1,11 @@
 """Prediction helpers shared by the local interface and command line."""
 import io
-from pathlib import Path
 
 import torch
 from PIL import Image, ImageOps, UnidentifiedImageError
 
 from .learning import image_transform
+from .model_catalog import ordered_checkpoints
 
 MAX_UPLOAD_BYTES = 20 * 1024 * 1024
 MAX_UPLOAD_PIXELS = 30_000_000
@@ -45,5 +45,4 @@ def predict_candidates(model, classes, image, device, top_k=5):
 
 
 def available_checkpoints(root):
-    paths = [path for path in Path(root).glob("*/best.pt") if "smoke" not in path.parent.name.lower()]
-    return sorted(paths, key=lambda path: (path.parent.name == "recommended", path.stat().st_mtime_ns), reverse=True)
+    return ordered_checkpoints(root)

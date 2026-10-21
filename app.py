@@ -10,13 +10,17 @@ from pathlib import Path
 import streamlit as st
 import torch
 
-from tourist_places.i18n import LANGUAGES, model_name, percentage, text
+from tourist_places.i18n import LANGUAGES, MESSAGES, model_description, model_name, percentage, text
+from tourist_places.explain import explain_model
+from tourist_places.hosting import ensure_hosted_models
 from tourist_places.inference import UploadError, available_checkpoints, decode_upload, predict_candidates
 from tourist_places.learning import load_checkpoint
+from tourist_places.model_catalog import model_run_name
 from tourist_places.uploader import travel_photo_uploader, uploaded_bytes
 
 PROJECT = Path(__file__).resolve().parent
 MODEL_ROOT = Path(os.environ.get("TOURIST_MODEL_DIR", str(PROJECT / "runs")))
+HOSTED = os.environ.get("TOURIST_HOSTED") == "1"
 
 initial_language = st.session_state.get("language", st.query_params.get("lang", "es"))
 if initial_language not in LANGUAGES:
@@ -40,10 +44,15 @@ div.stButton > button[kind="primary"] { border-radius: 9px; }
 @st.cache_resource(max_entries=2, show_spinner=False)
 def cached_model(path, fingerprint):
     # CPU serving leaves the GPU available for ongoing training; no upload is saved.
-    torch.set_num_threads(max(1, min(4, os.cpu_count() or 1)))
+    torch.set_num_threads(max(1, min(2 if HOSTED else 4, os.cpu_count() or 1)))
     device = torch.device("cpu")
     model, checkpoint = load_checkpoint(path, device)
     return model, checkpoint, device, threading.Lock()
+
+
+@st.cache_resource(max_entries=1, show_spinner=False)
+def cached_hosted_models(root):
+    return ensure_hosted_models(PROJECT / "cloud" / "models.json", root)
 
 
 # Stable widget keys keep the photo, model, and results when labels change.
@@ -68,16 +77,32 @@ def types_label(types):
     return " · ".join(t(item) for item in types)
 
 
+def show_model_comparison(paths):
+    st.subheader(t("model_comparison"))
+    st.caption(t("model_comparison_note"))
+    comparison = []
+    for path in paths:
+        approach_key = model_run_name(path) + "_approach"
+        scores = {}
+        try:
+            recorded = json.loads((path.parent / "test_metrics.json").read_text(encoding="utf-8"))
+            if isinstance(recorded, dict):
+                scores = recorded
+        except (OSError, ValueError):
+            pass
+        comparison.append({
+            t("model_column"): model_name(path, language),
+            t("approach_column"): t(approach_key) if approach_key in MESSAGES else model_description(path, language),
+            t("top1"): percent(scores["top1"]) if isinstance(scores.get("top1"), (int, float)) else t("not_evaluated"),
+            t("top5_column"): percent(scores["top5"]) if isinstance(scores.get("top5"), (int, float)) else t("not_evaluated"),
+        })
+    st.table(comparison)
+
+
 with st.sidebar:
     st.markdown("### 📍 México")
     st.caption(t("brand"))
     st.divider()
-    checkpoints = available_checkpoints(MODEL_ROOT)
-    previous_model = st.session_state.get("model_choice")
-    model_index = checkpoints.index(previous_model) if previous_model in checkpoints else 0
-    # A new locale-specific widget refreshes Streamlit's cached option labels.
-    selected = st.selectbox(t("model"), checkpoints, index=model_index, format_func=lambda p: model_name(p, language), disabled=not checkpoints, key=f"model_choice_{language}")
-    st.session_state["model_choice"] = selected
     threshold = st.slider(t("threshold"), 0.1, 0.95, 0.5, 0.05, key="minimum_score")
     st.caption(t("threshold_help"))
     if st.button(t("refresh"), width="stretch", key="refresh"):
@@ -85,12 +110,35 @@ with st.sidebar:
     st.divider()
     st.markdown("**" + t("research") + "**")
     st.caption(t("research_note"))
-    st.caption(t("privacy"))
+    st.caption(t("hosted_privacy" if HOSTED else "privacy"))
 
 st.markdown(f'<div class="eyebrow">{t("eyebrow")}</div>', unsafe_allow_html=True)
 st.markdown(f'<div class="hero-title">{t("hero")}</div>', unsafe_allow_html=True)
 st.markdown(f'<div class="hero-copy">{t("intro")}</div>', unsafe_allow_html=True)
 st.write("")
+
+if HOSTED:
+    try:
+        with st.spinner(t("hosted_loading")):
+            cached_hosted_models(str(MODEL_ROOT))
+    except (OSError, ValueError, RuntimeError):
+        logging.exception("Published model setup failed")
+        st.error(t("hosted_error"))
+        if st.button(t("retry_models")):
+            st.rerun()
+        st.stop()
+
+checkpoints = available_checkpoints(MODEL_ROOT)
+with st.container(border=True):
+    st.subheader(t("model_picker_title"))
+    st.caption(t("model_order_note"))
+    previous_model = st.session_state.get("model_choice")
+    model_index = checkpoints.index(previous_model) if previous_model in checkpoints else 0
+    # A new locale-specific widget refreshes Streamlit's cached option labels.
+    selected = st.selectbox(t("model"), checkpoints, index=model_index, format_func=lambda p: model_name(p, language), disabled=not checkpoints, key=f"model_choice_{language}")
+    st.session_state["model_choice"] = selected
+    if selected:
+        st.write(model_description(selected, language))
 
 resource = None
 fingerprint = None
@@ -113,7 +161,7 @@ with explore_tab:
     with left:
         st.subheader(t("start"))
         upload = travel_photo_uploader(language)
-        example_paths = sorted(path for path in (PROJECT / "data" / "ui_examples").glob("*") if path.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp"})
+        example_paths = [] if HOSTED else sorted(path for path in (PROJECT / "data" / "ui_examples").glob("*") if path.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp"})
         example = None
         if example_paths:
             examples = [None, *example_paths]
@@ -177,6 +225,25 @@ with explore_tab:
 with quality_tab:
     if resource:
         _, checkpoint, _, _ = resource
+        explanation = explain_model(checkpoint, language)
+        st.subheader(t("quality_selected"))
+        st.write(model_name(selected, language))
+        st.markdown("#### " + explanation["build_title"])
+        st.write(explanation["build_text"])
+        photo_steps, learning_steps = st.tabs([t("prediction_flow"), t("training_flow")])
+        with photo_steps:
+            st.markdown("#### " + explanation["inference_title"])
+            st.mermaid_chart(explanation["inference_mermaid"], alt=explanation["inference_alt"])
+        with learning_steps:
+            st.markdown("#### " + explanation["training_title"])
+            st.mermaid_chart(explanation["training_mermaid"], alt=explanation["training_alt"])
+        st.caption(explanation["schematic_note"])
+        with st.expander(t("training_details")):
+            st.write(explanation["training_text"])
+            if explanation["epoch_text"]:
+                st.caption(explanation["epoch_text"])
+        st.caption(explanation["score_note"])
+        st.markdown("#### " + t("quality_title"))
         metrics = checkpoint.get("val_metrics", {})
         evaluation_label = t("val_photos")
         test_path = selected.parent / "test_metrics.json"
@@ -186,17 +253,20 @@ with quality_tab:
                 evaluation_label = t("test_photos")
             except (OSError, ValueError):
                 pass
-        st.subheader(t("quality_title"))
         st.caption(t("quality_note"))
         columns = st.columns(3)
         columns[0].metric(t("coverage"), len(checkpoint["classes"]))
         columns[1].metric(t("top1"), percent(metrics.get("top1", 0)))
         columns[2].metric(evaluation_label, metrics.get("images", 0))
         st.caption(t("recall", score=percent(metrics.get("macro_recall", 0))))
-        st.markdown("#### " + t("collection"))
-        st.dataframe([{t("destination_column"): item["name"].title(), t("state_column"): item["state"].title(), t("type_column"): types_label(item["types"])} for item in checkpoint["classes"]], hide_index=True, width="stretch")
+        st.divider()
+        show_model_comparison(checkpoints)
+        with st.expander(t("collection")):
+            st.dataframe([{t("destination_column"): item["name"].title(), t("state_column"): item["state"].title(), t("type_column"): types_label(item["types"])} for item in checkpoint["classes"]], hide_index=True, width="stretch")
     else:
         st.write(t("quality_pending"))
+        if checkpoints:
+            show_model_comparison(checkpoints)
 
 st.divider()
-st.markdown(f'<div class="quiet-note">MÉXICO · {t("brand")} &nbsp; / &nbsp; {t("footer")}</div>', unsafe_allow_html=True)
+st.markdown(f'<div class="quiet-note">MÉXICO · {t("brand")} &nbsp; / &nbsp; {t("hosted_footer" if HOSTED else "footer")}</div>', unsafe_allow_html=True)

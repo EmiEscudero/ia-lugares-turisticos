@@ -14,7 +14,7 @@ After keeping one representative per nonconflicting family and requiring at leas
 
 An independent brute-force audit of all 1,375 retained photos found **zero cross-split exact or mirrored near matches at Hamming distance ≤4**. That verifies the implemented matching criterion, not the absence of every crop, same-source image, or semantic duplicate. Perceptual-hash false matches and geographic naming overlap still need human review. Most classes have only one evaluation photo, so these measurements are noisy.
 
-The byte-preserved [manifest](../experiments/pilot/manifest.csv), [class mapping](../experiments/pilot/metadata.json), [preparation report](../experiments/pilot/preparation_report.json), and [independent verification](../experiments/pilot/split_verification.json) are saved with the code. Manifest SHA-256: `65ab0d996ed647b427c324b9d2df9b3592385333cc3481d95fc9d7e1a81dc031`.
+The detailed image manifest (`data/clean_pilot/manifest.csv`) and preparation report (`data/clean_pilot/preparation_report.json`) are kept locally, together with `data/clean_pilot/metadata.json`, because the image paths can contain private source identifiers. They are not published with the code. The [destination mapping](../experiments/pilot/metadata.json), aggregate measurement reports, and [independent verification](../experiments/pilot/split_verification.json) remain public. Manifest SHA-256: `65ab0d996ed647b427c324b9d2df9b3592385333cc3481d95fc9d7e1a81dc031`.
 
 ## Controlled comparisons
 
@@ -55,10 +55,10 @@ The initial autotuned run also spends 74.2 s in the first unfrozen epoch; the st
 .\.venv\Scripts\python.exe -m tourist_places.prepare --source data/raw --output data/new_pilot --min-images 6 --hash-distance 4 --exclude-conflicts --inventory data/drive_inventory.json
 
 # Reuse the exact recorded split, providing the matching source copy.
-.\.venv\Scripts\python.exe -m tourist_places.train --prepared experiments/pilot --data-root data/raw --output runs/reproduction --device cuda --batch-size 32 --epochs 35 --workers 4 --patience 8
+.\.venv\Scripts\python.exe -m tourist_places.train --prepared data/clean_pilot --data-root data/raw --output runs/reproduction --device cuda --batch-size 32 --epochs 35 --workers 4 --patience 8
 ```
 
-The original-name inventory and photo copy remain local. For a fresh download with original filenames, omit `--inventory`. Different mirror representative choices can change bytes; reuse the committed manifest and its matching ID-named source copy for the recorded experiment. Seeds do not promise bit-for-bit CUDA reproducibility. `runs/recommended/best.pt` locally contains the selected stable model; SHA-256 `3fcf631a8645d2bb4f2d8b790683f67192993443eee270dc38094ea2e3c9ee1e`.
+The original-name inventory, detailed manifest, preparation report, and photo copy remain local. Reproducing the exact recorded split requires authorized access to those local files under `data/clean_pilot/` and the matching source copy. They are not supplied by cloning this repository. For a new authorized collection with original filenames, omit `--inventory`, prepare a new split, and train with its output folder (for example, `--prepared data/new_pilot`). Different mirror representative choices can change bytes; the new split should not be presented as the recorded pilot. Seeds do not promise bit-for-bit CUDA reproducibility. `runs/recommended/best.pt` locally contains the selected stable model; SHA-256 `3fcf631a8645d2bb4f2d8b790683f67192993443eee270dc38094ea2e3c9ee1e`.
 
 ## Interface and next experiments
 

@@ -8,3 +8,6 @@ artifacts/
 *.pth
 *.pt
 *.zip
+.streamlit/secrets.toml
+experiments/pilot/manifest.csv
+experiments/pilot/preparation_report.json
