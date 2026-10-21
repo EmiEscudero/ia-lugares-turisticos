@@ -11,7 +11,7 @@ Choose **Create app**, then **Yup, I have an app**, and use:
 | Field | Value |
 | --- | --- |
 | Repository | `EmiEscudero/ia-lugares-turisticos` |
-| Branch | `codex/improve-place-recognition` |
+| Branch | `dev/improve-place-recognition` |
 | Main file path | `cloud/streamlit_app.py` |
 | Advanced settings → Python version | `3.13` |
 | Secrets | None required |
@@ -45,7 +45,7 @@ See the official [deployment guide](https://docs.streamlit.io/deploy/streamlit-c
 
 ## Instrucciones en español
 
-Inicia sesión tú mismo en [Streamlit Community Cloud](https://share.streamlit.io/) y completa la aceptación de sus términos. Selecciona **Create app** y **Yup, I have an app**. Usa el repositorio `EmiEscudero/ia-lugares-turisticos`, la rama `codex/improve-place-recognition` y el archivo `cloud/streamlit_app.py`. En **Advanced settings**, elige Python `3.13`. No necesitas secretos ni acceso a la colección de fotos. Elige un subdominio disponible y pulsa **Deploy**.
+Inicia sesión tú mismo en [Streamlit Community Cloud](https://share.streamlit.io/) y completa la aceptación de sus términos. Selecciona **Create app** y **Yup, I have an app**. Usa el repositorio `EmiEscudero/ia-lugares-turisticos`, la rama `dev/improve-place-recognition` y el archivo `cloud/streamlit_app.py`. En **Advanced settings**, elige Python `3.13`. No necesitas secretos ni acceso a la colección de fotos. Elige un subdominio disponible y pulsa **Deploy**.
 
 El primer arranque descarga y verifica los cuatro modelos publicados en GitHub; puede tardar un poco. Cuando termine, copia la dirección `https://…streamlit.app` y agrega `?lang=es` o `?lang=en` para tu portafolio. Publicar el código en GitHub no crea por sí solo esa dirección y no es necesario cambiar `main`.
 
