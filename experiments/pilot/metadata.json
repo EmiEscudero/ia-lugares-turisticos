@@ -1,0 +1,1495 @@
+{
+  "format_version": 1,
+  "source_root": "data/raw",
+  "classes": [
+    {
+      "id": 0,
+      "key": "CAMPECHE/ISLA AGUADA",
+      "name": "ISLA AGUADA",
+      "state": "CAMPECHE",
+      "types": [
+        "beach",
+        "town"
+      ]
+    },
+    {
+      "id": 1,
+      "key": "CHIAPAS/CHIAPA DE CORZO",
+      "name": "CHIAPA DE CORZO",
+      "state": "CHIAPAS",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 2,
+      "key": "CHIHUAHUA/CASAS GRANDES",
+      "name": "CASAS GRANDES",
+      "state": "CHIHUAHUA",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 3,
+      "key": "GUANAJUATO/DOLORES HIDALGO",
+      "name": "DOLORES HIDALGO",
+      "state": "GUANAJUATO",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 4,
+      "key": "GUERRERO/TAXCO",
+      "name": "TAXCO",
+      "state": "GUERRERO",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 5,
+      "key": "JALISCO/PUERTO VALLARTA",
+      "name": "PUERTO VALLARTA",
+      "state": "JALISCO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 6,
+      "key": "MICHOACAN/LAZARO CARDENAS",
+      "name": "LAZARO CARDENAS",
+      "state": "MICHOACAN",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 7,
+      "key": "MICHOACAN/MANZANILLITA Y RANGEL",
+      "name": "MANZANILLITA Y RANGEL",
+      "state": "MICHOACAN",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 8,
+      "key": "MICHOACAN/MARUATA",
+      "name": "MARUATA",
+      "state": "MICHOACAN",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 9,
+      "key": "MICHOACAN/MEXCALHUACAN",
+      "name": "MEXCALHUACAN",
+      "state": "MICHOACAN",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 10,
+      "key": "MICHOACAN/MOTIN DE ORO",
+      "name": "MOTIN DE ORO",
+      "state": "MICHOACAN",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 11,
+      "key": "MICHOACAN/PALMA SOLA",
+      "name": "PALMA SOLA",
+      "state": "MICHOACAN",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 12,
+      "key": "MICHOACAN/PARACHO DE VERDUZCO",
+      "name": "PARACHO DE VERDUZCO",
+      "state": "MICHOACAN",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 13,
+      "key": "MICHOACAN/PATZCUARO",
+      "name": "PATZCUARO",
+      "state": "MICHOACAN",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 14,
+      "key": "MICHOACAN/PICHILINGUILLO",
+      "name": "PICHILINGUILLO",
+      "state": "MICHOACAN",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 15,
+      "key": "MICHOACAN/PLAYA AZUL",
+      "name": "PLAYA AZUL",
+      "state": "MICHOACAN",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 16,
+      "key": "MICHOACAN/SAN JUAN DE ALIMA",
+      "name": "SAN JUAN DE ALIMA",
+      "state": "MICHOACAN",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 17,
+      "key": "MICHOACAN/TICUIZ",
+      "name": "TICUIZ",
+      "state": "MICHOACAN",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 18,
+      "key": "MICHOACAN/TLAPUJAHUA DE RAYON",
+      "name": "TLAPUJAHUA DE RAYON",
+      "state": "MICHOACAN",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 19,
+      "key": "MORELOS/TEPOZTLAN",
+      "name": "TEPOZTLAN",
+      "state": "MORELOS",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 20,
+      "key": "MORELOS/TLAYACAPAN",
+      "name": "TLAYACAPAN",
+      "state": "MORELOS",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 21,
+      "key": "NAYARIT/BAHIA DE BUCERIAS",
+      "name": "BAHIA DE BUCERIAS",
+      "state": "NAYARIT",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 22,
+      "key": "NAYARIT/BAHIA DE MATANCHEN",
+      "name": "BAHIA DE MATANCHEN",
+      "state": "NAYARIT",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 23,
+      "key": "NAYARIT/CHILA",
+      "name": "CHILA",
+      "state": "NAYARIT",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 24,
+      "key": "NAYARIT/CORRAL DEL RISCO",
+      "name": "CORRAL DEL RISCO",
+      "state": "NAYARIT",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 25,
+      "key": "NAYARIT/ISLAS MARIETAS",
+      "name": "ISLAS MARIETAS",
+      "state": "NAYARIT",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 26,
+      "key": "NAYARIT/LA CRUZ DE HUANACAXTLE",
+      "name": "LA CRUZ DE HUANACAXTLE",
+      "state": "NAYARIT",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 27,
+      "key": "NAYARIT/LAS ISLITAS",
+      "name": "LAS ISLITAS",
+      "state": "NAYARIT",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 28,
+      "key": "NAYARIT/LO DE MARCOS",
+      "name": "LO DE MARCOS",
+      "state": "NAYARIT",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 29,
+      "key": "NAYARIT/LOS AYALA",
+      "name": "LOS AYALA",
+      "state": "NAYARIT",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 30,
+      "key": "NAYARIT/MANZANILLA",
+      "name": "MANZANILLA",
+      "state": "NAYARIT",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 31,
+      "key": "NAYARIT/MEXCALTITAN",
+      "name": "MEXCALTITAN",
+      "state": "NAYARIT",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 32,
+      "key": "NAYARIT/NUEVO VALLARTA",
+      "name": "NUEVO VALLARTA",
+      "state": "NAYARIT",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 33,
+      "key": "NAYARIT/PLATANITOS",
+      "name": "PLATANITOS",
+      "state": "NAYARIT",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 34,
+      "key": "NAYARIT/PLAYA LITIBU",
+      "name": "PLAYA LITIBU",
+      "state": "NAYARIT",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 35,
+      "key": "NAYARIT/PLAYA SAN PANCHO",
+      "name": "PLAYA SAN PANCHO",
+      "state": "NAYARIT",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 36,
+      "key": "NAYARIT/PUNTA MITA",
+      "name": "PUNTA MITA",
+      "state": "NAYARIT",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 37,
+      "key": "NAYARIT/RINCON DE GUAYABITOS",
+      "name": "RINCON DE GUAYABITOS",
+      "state": "NAYARIT",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 38,
+      "key": "NAYARIT/SAN BLAS",
+      "name": "SAN BLAS",
+      "state": "NAYARIT",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 39,
+      "key": "NAYARIT/SAYULITA",
+      "name": "SAYULITA",
+      "state": "NAYARIT",
+      "types": [
+        "beach",
+        "town"
+      ]
+    },
+    {
+      "id": 40,
+      "key": "NUEVO LEON/LINARES",
+      "name": "LINARES",
+      "state": "NUEVO LEON",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 41,
+      "key": "NUEVO LEON/SANTIAGO",
+      "name": "SANTIAGO",
+      "state": "NUEVO LEON",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 42,
+      "key": "OAXACA/BACOCHO",
+      "name": "BACOCHO",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 43,
+      "key": "OAXACA/BAHIA CONEJOS",
+      "name": "BAHIA CONEJOS",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 44,
+      "key": "OAXACA/BAHIA DE CHACHACUAL",
+      "name": "BAHIA DE CHACHACUAL",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 45,
+      "key": "OAXACA/BAHIA DE CHAHUE",
+      "name": "BAHIA DE CHAHUE",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 46,
+      "key": "OAXACA/BAHIA DE SAN AGUSTIN",
+      "name": "BAHIA DE SAN AGUSTIN",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 47,
+      "key": "OAXACA/BAHIA DE SANTA BRUZ",
+      "name": "BAHIA DE SANTA BRUZ",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 48,
+      "key": "OAXACA/BAHIA DE TANGOLUNDA",
+      "name": "BAHIA DE TANGOLUNDA",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 49,
+      "key": "OAXACA/BAHIAS DE MAGUEY Y EL ORGANO",
+      "name": "BAHIAS DE MAGUEY Y EL ORGANO",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 50,
+      "key": "OAXACA/BAJOS DE COYULA Y EL ARENAL",
+      "name": "BAJOS DE COYULA Y EL ARENAL",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 51,
+      "key": "OAXACA/CARRIZALILLO",
+      "name": "CARRIZALILLO",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 52,
+      "key": "OAXACA/CHIPEHUA",
+      "name": "CHIPEHUA",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 53,
+      "key": "OAXACA/ESTACAHUITE",
+      "name": "ESTACAHUITE",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 54,
+      "key": "OAXACA/HUATULCO",
+      "name": "HUATULCO",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 55,
+      "key": "OAXACA/LA BOQUILLA",
+      "name": "LA BOQUILLA",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 56,
+      "key": "OAXACA/MANZANILLO",
+      "name": "MANZANILLO",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 57,
+      "key": "OAXACA/MAZUNTE",
+      "name": "MAZUNTE",
+      "state": "OAXACA",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 58,
+      "key": "OAXACA/PLAYA ARROCITO",
+      "name": "PLAYA ARROCITO",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 59,
+      "key": "OAXACA/PLAYA CORRALERO",
+      "name": "PLAYA CORRALERO",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 60,
+      "key": "OAXACA/PLAYA DEL MUELLE",
+      "name": "PLAYA DEL MUELLE",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 61,
+      "key": "OAXACA/PLAYA DEL PANTEON",
+      "name": "PLAYA DEL PANTEON",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 62,
+      "key": "OAXACA/PLAYA LA TIJERA",
+      "name": "PLAYA LA TIJERA",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 63,
+      "key": "OAXACA/PLAYA MAZUNTE",
+      "name": "PLAYA MAZUNTE",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 64,
+      "key": "OAXACA/PLAYA ROCA BLANCA",
+      "name": "PLAYA ROCA BLANCA",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 65,
+      "key": "OAXACA/PUERTO ANGEL",
+      "name": "PUERTO ANGEL",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 66,
+      "key": "OAXACA/PUERTO ANGELITO",
+      "name": "PUERTO ANGELITO",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 67,
+      "key": "OAXACA/PUERTO ESCONDIDO",
+      "name": "PUERTO ESCONDIDO",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 68,
+      "key": "OAXACA/SALINA CRUZ",
+      "name": "SALINA CRUZ",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 69,
+      "key": "OAXACA/SAN AGUSTINILLO",
+      "name": "SAN AGUSTINILLO",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 70,
+      "key": "OAXACA/SAN PABLO VILLA DE MITLA",
+      "name": "SAN PABLO VILLA DE MITLA",
+      "state": "OAXACA",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 71,
+      "key": "OAXACA/ZICATELA",
+      "name": "ZICATELA",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 72,
+      "key": "OAXACA/ZIPOLITE",
+      "name": "ZIPOLITE",
+      "state": "OAXACA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 73,
+      "key": "PUEBLA/ATLIXCO",
+      "name": "ATLIXCO",
+      "state": "PUEBLA",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 74,
+      "key": "PUEBLA/CHOLULA",
+      "name": "CHOLULA",
+      "state": "PUEBLA",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 75,
+      "key": "PUEBLA/CUETZALAN DEL PROGRESO",
+      "name": "CUETZALAN DEL PROGRESO",
+      "state": "PUEBLA",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 76,
+      "key": "PUEBLA/HUAUCHINANGO",
+      "name": "HUAUCHINANGO",
+      "state": "PUEBLA",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 77,
+      "key": "PUEBLA/PAHUATLAN",
+      "name": "PAHUATLAN",
+      "state": "PUEBLA",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 78,
+      "key": "PUEBLA/TLATLAUQUITEPEC",
+      "name": "TLATLAUQUITEPEC",
+      "state": "PUEBLA",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 79,
+      "key": "PUEBLA/ZACATLAN DE LAS MANZANAS",
+      "name": "ZACATLAN DE LAS MANZANAS",
+      "state": "PUEBLA",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 80,
+      "key": "QUERETARO/AMEALCO DE BONFIL",
+      "name": "AMEALCO DE BONFIL",
+      "state": "QUERETARO",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 81,
+      "key": "QUERETARO/BERNAL",
+      "name": "BERNAL",
+      "state": "QUERETARO",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 82,
+      "key": "QUERETARO/CADEREYTA DE MONTES",
+      "name": "CADEREYTA DE MONTES",
+      "state": "QUERETARO",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 83,
+      "key": "QUERETARO/JALPAN DE SERRA",
+      "name": "JALPAN DE SERRA",
+      "state": "QUERETARO",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 84,
+      "key": "QUERETARO/SAN JOAQUIN",
+      "name": "SAN JOAQUIN",
+      "state": "QUERETARO",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 85,
+      "key": "QUERETARO/TEQUISQUIAPAN",
+      "name": "TEQUISQUIAPAN",
+      "state": "QUERETARO",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 86,
+      "key": "QUINTANA ROO/AKUMAL",
+      "name": "AKUMAL",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 87,
+      "key": "QUINTANA ROO/BACALAR",
+      "name": "BACALAR",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach",
+        "town"
+      ]
+    },
+    {
+      "id": 88,
+      "key": "QUINTANA ROO/CHETUMAL",
+      "name": "CHETUMAL",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 89,
+      "key": "QUINTANA ROO/COZUMEL",
+      "name": "COZUMEL",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 90,
+      "key": "QUINTANA ROO/HOLBOX",
+      "name": "HOLBOX",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 91,
+      "key": "QUINTANA ROO/ISLA CONTOY",
+      "name": "ISLA CONTOY",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 92,
+      "key": "QUINTANA ROO/ISLA MUJERES",
+      "name": "ISLA MUJERES",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach",
+        "town"
+      ]
+    },
+    {
+      "id": 93,
+      "key": "QUINTANA ROO/KANTENAH",
+      "name": "KANTENAH",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 94,
+      "key": "QUINTANA ROO/MAHAHUAL",
+      "name": "MAHAHUAL",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 95,
+      "key": "QUINTANA ROO/PAAMUL",
+      "name": "PAAMUL",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 96,
+      "key": "QUINTANA ROO/PLAYA DEL SECRETO",
+      "name": "PLAYA DEL SECRETO",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 97,
+      "key": "QUINTANA ROO/PLAYA PARAISO",
+      "name": "PLAYA PARAISO",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 98,
+      "key": "QUINTANA ROO/PLAYA PUNTA ESMERALDA",
+      "name": "PLAYA PUNTA ESMERALDA",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 99,
+      "key": "QUINTANA ROO/PLAYACAR",
+      "name": "PLAYACAR",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 100,
+      "key": "QUINTANA ROO/PUERTO AVENTURAS",
+      "name": "PUERTO AVENTURAS",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 101,
+      "key": "QUINTANA ROO/PUERTO MORELOS",
+      "name": "PUERTO MORELOS",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 102,
+      "key": "QUINTANA ROO/PUNTA ALLEN",
+      "name": "PUNTA ALLEN",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 103,
+      "key": "QUINTANA ROO/PUNTA BETE",
+      "name": "PUNTA BETE",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 104,
+      "key": "QUINTANA ROO/PUNTA MAROMA",
+      "name": "PUNTA MAROMA",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 105,
+      "key": "QUINTANA ROO/TULUM",
+      "name": "TULUM",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach",
+        "town"
+      ]
+    },
+    {
+      "id": 106,
+      "key": "QUINTANA ROO/XCACEL",
+      "name": "XCACEL",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 107,
+      "key": "QUINTANA ROO/XCALACOCO",
+      "name": "XCALACOCO",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 108,
+      "key": "QUINTANA ROO/XCALAK",
+      "name": "XCALAK",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 109,
+      "key": "QUINTANA ROO/XCARET",
+      "name": "XCARET",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 110,
+      "key": "QUINTANA ROO/XPU HA",
+      "name": "XPU HA",
+      "state": "QUINTANA ROO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 111,
+      "key": "SAN LUIS POTOSI/AQUISMON",
+      "name": "AQUISMON",
+      "state": "SAN LUIS POTOSI",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 112,
+      "key": "SAN LUIS POTOSI/REAL DE CATORCE",
+      "name": "REAL DE CATORCE",
+      "state": "SAN LUIS POTOSI",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 113,
+      "key": "SAN LUIS POTOSI/XILITLA",
+      "name": "XILITLA",
+      "state": "SAN LUIS POTOSI",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 114,
+      "key": "SINALOA/CERRITOS",
+      "name": "CERRITOS",
+      "state": "SINALOA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 115,
+      "key": "SINALOA/COSALA",
+      "name": "COSALA",
+      "state": "SINALOA",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 116,
+      "key": "SINALOA/EL ROSARIO",
+      "name": "EL ROSARIO",
+      "state": "SINALOA",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 117,
+      "key": "SINALOA/ISLA DE LA PIEDRA",
+      "name": "ISLA DE LA PIEDRA",
+      "state": "SINALOA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 118,
+      "key": "SINALOA/ISLA DEL FARALLON",
+      "name": "ISLA DEL FARALLON",
+      "state": "SINALOA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 119,
+      "key": "SINALOA/MAZATLAN",
+      "name": "MAZATLAN",
+      "state": "SINALOA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 120,
+      "key": "SINALOA/MOCORITO",
+      "name": "MOCORITO",
+      "state": "SINALOA",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 121,
+      "key": "SINALOA/PLAYA BRUJAS",
+      "name": "PLAYA BRUJAS",
+      "state": "SINALOA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 122,
+      "key": "SINALOA/PLAYA CAMARON SABALO",
+      "name": "PLAYA CAMARON SABALO",
+      "state": "SINALOA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 123,
+      "key": "SINALOA/PLAYA GAVIOTAS",
+      "name": "PLAYA GAVIOTAS",
+      "state": "SINALOA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 124,
+      "key": "SINALOA/PLAYA NORTE",
+      "name": "PLAYA NORTE",
+      "state": "SINALOA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 125,
+      "key": "SONORA/ALAMOS",
+      "name": "ALAMOS",
+      "state": "SONORA",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 126,
+      "key": "SONORA/BAHIA DE KINO",
+      "name": "BAHIA DE KINO",
+      "state": "SONORA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 127,
+      "key": "SONORA/BAHIA DE SAN CARLOS",
+      "name": "BAHIA DE SAN CARLOS",
+      "state": "SONORA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 128,
+      "key": "SONORA/EL HIMALAYA",
+      "name": "EL HIMALAYA",
+      "state": "SONORA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 129,
+      "key": "SONORA/LOS ALGODONES",
+      "name": "LOS ALGODONES",
+      "state": "SONORA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 130,
+      "key": "SONORA/PLAYA HERMOSA",
+      "name": "PLAYA HERMOSA",
+      "state": "SONORA",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 131,
+      "key": "TABASCO/PLAYA PICO DE ORO",
+      "name": "PLAYA PICO DE ORO",
+      "state": "TABASCO",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 132,
+      "key": "TABASCO/TAPIJULAPA",
+      "name": "TAPIJULAPA",
+      "state": "TABASCO",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 133,
+      "key": "TAMAULIPAS/TULA",
+      "name": "TULA",
+      "state": "TAMAULIPAS",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 134,
+      "key": "TLAXCALA/HUAMANTLA",
+      "name": "HUAMANTLA",
+      "state": "TLAXCALA",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 135,
+      "key": "TLAXCALA/TLAXCO",
+      "name": "TLAXCO",
+      "state": "TLAXCALA",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 136,
+      "key": "VERACRUZ/BOCA DEL RIO",
+      "name": "BOCA DEL RIO",
+      "state": "VERACRUZ",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 137,
+      "key": "VERACRUZ/CHACHALACAS",
+      "name": "CHACHALACAS",
+      "state": "VERACRUZ",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 138,
+      "key": "VERACRUZ/COATEPEC",
+      "name": "COATEPEC",
+      "state": "VERACRUZ",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 139,
+      "key": "VERACRUZ/ORIZABA",
+      "name": "ORIZABA",
+      "state": "VERACRUZ",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 140,
+      "key": "VERACRUZ/PAPANTLA",
+      "name": "PAPANTLA",
+      "state": "VERACRUZ",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 141,
+      "key": "VERACRUZ/PENA HERMOSA",
+      "name": "PENA HERMOSA",
+      "state": "VERACRUZ",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 142,
+      "key": "VERACRUZ/PLAYA FARALLON",
+      "name": "PLAYA FARALLON",
+      "state": "VERACRUZ",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 143,
+      "key": "VERACRUZ/PLAYA LA MANCHA",
+      "name": "PLAYA LA MANCHA",
+      "state": "VERACRUZ",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 144,
+      "key": "VERACRUZ/PLAYA MIRAMAR",
+      "name": "PLAYA MIRAMAR",
+      "state": "VERACRUZ",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 145,
+      "key": "VERACRUZ/PLAYA MOCAMBO",
+      "name": "PLAYA MOCAMBO",
+      "state": "VERACRUZ",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 146,
+      "key": "VERACRUZ/TAMIAHUA",
+      "name": "TAMIAHUA",
+      "state": "VERACRUZ",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 147,
+      "key": "VERACRUZ/TECOLUTLA",
+      "name": "TECOLUTLA",
+      "state": "VERACRUZ",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 148,
+      "key": "VERACRUZ/XICO",
+      "name": "XICO",
+      "state": "VERACRUZ",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 149,
+      "key": "VERACRUZ/ZOZOCOLCO DE HIDALGO",
+      "name": "ZOZOCOLCO DE HIDALGO",
+      "state": "VERACRUZ",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 150,
+      "key": "YUCATAN/CELESTUN",
+      "name": "CELESTUN",
+      "state": "YUCATAN",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 151,
+      "key": "YUCATAN/EL CUYO",
+      "name": "EL CUYO",
+      "state": "YUCATAN",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 152,
+      "key": "YUCATAN/EL PALMAR",
+      "name": "EL PALMAR",
+      "state": "YUCATAN",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 153,
+      "key": "YUCATAN/IZAMAL",
+      "name": "IZAMAL",
+      "state": "YUCATAN",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 154,
+      "key": "YUCATAN/MANI",
+      "name": "MANI",
+      "state": "YUCATAN",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 155,
+      "key": "YUCATAN/PLAYA MAYA",
+      "name": "PLAYA MAYA",
+      "state": "YUCATAN",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 156,
+      "key": "YUCATAN/PLAYA PUERTO ABRIGO",
+      "name": "PLAYA PUERTO ABRIGO",
+      "state": "YUCATAN",
+      "types": [
+        "beach"
+      ]
+    },
+    {
+      "id": 157,
+      "key": "YUCATAN/SISAL",
+      "name": "SISAL",
+      "state": "YUCATAN",
+      "types": [
+        "beach",
+        "town"
+      ]
+    },
+    {
+      "id": 158,
+      "key": "YUCATAN/VALLADOLID",
+      "name": "VALLADOLID",
+      "state": "YUCATAN",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 159,
+      "key": "ZACATECAS/GUADALUPE",
+      "name": "GUADALUPE",
+      "state": "ZACATECAS",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 160,
+      "key": "ZACATECAS/NOCHISTLAN DE MEJIA",
+      "name": "NOCHISTLAN DE MEJIA",
+      "state": "ZACATECAS",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 161,
+      "key": "ZACATECAS/PINOS",
+      "name": "PINOS",
+      "state": "ZACATECAS",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 162,
+      "key": "ZACATECAS/SOMBRERETE",
+      "name": "SOMBRERETE",
+      "state": "ZACATECAS",
+      "types": [
+        "town"
+      ]
+    },
+    {
+      "id": 163,
+      "key": "ZACATECAS/TEUL DE GONZALES ORTEGA",
+      "name": "TEUL DE GONZALES ORTEGA",
+      "state": "ZACATECAS",
+      "types": [
+        "town"
+      ]
+    }
+  ],
+  "seed": 42,
+  "val_fraction": 0.15,
+  "test_fraction": 0.15,
+  "min_images": 6,
+  "hash_distance": 4,
+  "exclude_conflicts": true,
+  "manifest_sha256": "65ab0d996ed647b427c324b9d2df9b3592385333cc3481d95fc9d7e1a81dc031"
+}

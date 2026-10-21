@@ -1,0 +1,61 @@
+{
+  "release": "streamlit-pilot-v1",
+  "models": [
+    {
+      "run": "stable_transfer_pilot",
+      "url": "https://github.com/EmiEscudero/ia-lugares-turisticos/releases/download/streamlit-pilot-v1/stable_transfer_pilot.pt",
+      "sha256": "f4807ae63715acc297d191194bbe47a91c27f2b43d25d368f2c19bf6e4c4d0a3",
+      "bytes": 17193971,
+      "test_metrics": {
+        "loss": 3.439751571445374,
+        "top1": 0.3157894736842105,
+        "top5": 0.5454545454545454,
+        "macro_recall": 0.2947154471544715,
+        "macro_f1": 0.24588172667440958,
+        "images": 209
+      }
+    },
+    {
+      "run": "frozen_pilot",
+      "url": "https://github.com/EmiEscudero/ia-lugares-turisticos/releases/download/streamlit-pilot-v1/frozen_pilot.pt",
+      "sha256": "90ce59b9a1d41b5a978658307646a0dde7a765a4ed29300687a787f1ae722666",
+      "bytes": 17190677,
+      "test_metrics": {
+        "loss": 3.385013272887782,
+        "top1": 0.3349282296650718,
+        "top5": 0.5358851674641149,
+        "macro_recall": 0.3130081300813008,
+        "macro_f1": 0.2656455671699574,
+        "images": 209
+      }
+    },
+    {
+      "run": "transfer_pilot",
+      "url": "https://github.com/EmiEscudero/ia-lugares-turisticos/releases/download/streamlit-pilot-v1/transfer_pilot.pt",
+      "sha256": "6281412ed63f3c042f2dd47fd85eebf155cd9bcf49958f3c4391894cab9b9ee3",
+      "bytes": 17191345,
+      "test_metrics": {
+        "loss": 3.6011312087757164,
+        "top1": 0.2727272727272727,
+        "top5": 0.48325358851674644,
+        "macro_recall": 0.2688008130081301,
+        "macro_f1": 0.22896341463414632,
+        "images": 209
+      }
+    },
+    {
+      "run": "legacy_pilot",
+      "url": "https://github.com/EmiEscudero/ia-lugares-turisticos/releases/download/streamlit-pilot-v1/legacy_pilot.pt",
+      "sha256": "149a8951946dbdc4f162fabf869b02734b322bf69cb873bc1b121499aa9dddb0",
+      "bytes": 34011157,
+      "test_metrics": {
+        "loss": 5.5127639793322984,
+        "top1": 0.019138755980861243,
+        "top5": 0.11483253588516747,
+        "macro_recall": 0.021341463414634148,
+        "macro_f1": 0.014227642276422765,
+        "images": 209
+      }
+    }
+  ]
+}

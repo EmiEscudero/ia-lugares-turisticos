@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #25483e; font: 15px/1.5 system-ui, sans-serif; }
+    #drop { padding: 22px 18px; text-align: center; border: 1px dashed #89a798; border-radius: 14px; background: #f0f3ec; }
+    #drop.over { border-color: #174d45; background: #e1ebe3; }
+    p { margin: 0 0 7px; }
+    #help, #status { font-size: 12px; color: #62726a; overflow-wrap: anywhere; }
+    button { font: inherit; border: 1px solid #bdcfc4; border-radius: 8px; padding: 7px 16px; background: white; color: #174d45; cursor: pointer; }
+    button:hover { border-color: #174d45; }
+    button:focus-visible { outline: 3px solid #528b71; outline-offset: 3px; }
+    button:disabled { opacity: .6; cursor: wait; }
+    #remove { margin-left: 8px; }
+    #status { margin-top: 9px; margin-bottom: 0; }
+    #photo { display: none; }
+  </style>
+</head>
+<body>
+  <section id="drop" aria-labelledby="instruction">
+    <p id="instruction"></p><p id="help"></p>
+    <input id="photo" type="file" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp">
+    <button id="choose" type="button"></button><button id="remove" type="button" hidden></button>
+    <p id="status" role="status" aria-live="polite"></p>
+  </section>
+  <script src="uploader.js"></script>
+</body>
+</html>

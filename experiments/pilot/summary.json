@@ -1,0 +1,198 @@
+{
+  "selection": {
+    "source_run": "stable_transfer_pilot",
+    "criterion": "maximum validation macro-F1; validation loss breaks ties",
+    "validation": {
+      "loss": 3.437280000111703,
+      "top1": 0.3492822966507177,
+      "top5": 0.5502392344497608,
+      "macro_recall": 0.33587398373983735,
+      "macro_f1": 0.309792690172891,
+      "images": 209
+    },
+    "test_used_for_selection": false,
+    "checkpoint_sha256": "3fcf631a8645d2bb4f2d8b790683f67192993443eee270dc38094ea2e3c9ee1e"
+  },
+  "runs": [
+    {
+      "run": "transfer_pilot",
+      "best_epoch": 24,
+      "epochs_completed": 32,
+      "validation": {
+        "loss": 3.6693783901524886,
+        "top1": 0.2583732057416268,
+        "top5": 0.430622009569378,
+        "macro_recall": 0.2520325203252033,
+        "macro_f1": 0.2282520325203252,
+        "images": 209
+      },
+      "config": {
+        "prepared": "data\\clean_pilot",
+        "data_root": null,
+        "output": "runs\\transfer_pilot",
+        "epochs": 35,
+        "warmup_epochs": 3,
+        "batch_size": 32,
+        "workers": 4,
+        "learning_rate": 0.001,
+        "backbone_learning_rate": 1e-05,
+        "patience": 8,
+        "seed": 42,
+        "device": "cuda",
+        "no_amp": false,
+        "no_pretrained": false,
+        "architecture": "efficientnet_b0",
+        "cudnn_benchmark": true,
+        "update_batchnorm": true
+      },
+      "recorded_train_val_seconds": 536.2887817999872,
+      "steady_epoch_median_seconds": 12.855141150008421,
+      "first_epoch_seconds": 88.86776439999812,
+      "peak_allocated_vram_mb": 1470.9326171875,
+      "checkpoint_sha256": "f2b4125f25124f0eae9401fadea6522a3113811ee68af3c5c79af74f9d1267e2",
+      "test": {
+        "loss": 3.6011312087757164,
+        "top1": 0.2727272727272727,
+        "top5": 0.48325358851674644,
+        "macro_recall": 0.2688008130081301,
+        "macro_f1": 0.22896341463414632,
+        "images": 209
+      }
+    },
+    {
+      "run": "frozen_pilot",
+      "best_epoch": 22,
+      "epochs_completed": 30,
+      "validation": {
+        "loss": 3.3580375402167655,
+        "top1": 0.3444976076555024,
+        "top5": 0.5167464114832536,
+        "macro_recall": 0.3246951219512195,
+        "macro_f1": 0.28740898329312964,
+        "images": 209
+      },
+      "config": {
+        "prepared": "data\\clean_pilot",
+        "data_root": null,
+        "output": "runs\\frozen_pilot",
+        "epochs": 35,
+        "warmup_epochs": 35,
+        "batch_size": 32,
+        "workers": 4,
+        "learning_rate": 0.001,
+        "backbone_learning_rate": 1e-05,
+        "patience": 8,
+        "seed": 42,
+        "device": "cuda",
+        "no_amp": false,
+        "no_pretrained": false,
+        "architecture": "efficientnet_b0",
+        "cudnn_benchmark": false,
+        "update_batchnorm": false
+      },
+      "recorded_train_val_seconds": 244.7958586999739,
+      "steady_epoch_median_seconds": 6.384960099996533,
+      "first_epoch_seconds": 55.260570399987046,
+      "peak_allocated_vram_mb": 214.82421875,
+      "checkpoint_sha256": "f1fe1f9cb5bfb7430699bace97eac32b568ccb9d3c6b612c758a978bfbc16b88",
+      "test": {
+        "loss": 3.385013272887782,
+        "top1": 0.3349282296650718,
+        "top5": 0.5358851674641149,
+        "macro_recall": 0.3130081300813008,
+        "macro_f1": 0.2656455671699574,
+        "images": 209
+      }
+    },
+    {
+      "run": "legacy_pilot",
+      "best_epoch": 13,
+      "epochs_completed": 21,
+      "validation": {
+        "loss": 5.520798883940044,
+        "top1": 0.06220095693779904,
+        "top5": 0.19617224880382775,
+        "macro_recall": 0.048272357723577235,
+        "macro_f1": 0.02918118466898955,
+        "images": 209
+      },
+      "config": {
+        "prepared": "data\\clean_pilot",
+        "data_root": null,
+        "output": "runs\\legacy_pilot",
+        "epochs": 35,
+        "warmup_epochs": 0,
+        "batch_size": 32,
+        "workers": 4,
+        "learning_rate": 0.001,
+        "backbone_learning_rate": 0.001,
+        "patience": 8,
+        "seed": 42,
+        "device": "cuda",
+        "no_amp": false,
+        "no_pretrained": false,
+        "architecture": "legacy_cnn",
+        "cudnn_benchmark": false,
+        "update_batchnorm": false
+      },
+      "recorded_train_val_seconds": 152.1147864999948,
+      "steady_epoch_median_seconds": 5.608293600002071,
+      "first_epoch_seconds": 38.30963289999636,
+      "peak_allocated_vram_mb": 235.830078125,
+      "checkpoint_sha256": "993936d33f655d217566e756f8a358a5d30bbc34d9cc68000f46e453f17325a2",
+      "test": {
+        "loss": 5.5127639793322984,
+        "top1": 0.019138755980861243,
+        "top5": 0.11483253588516747,
+        "macro_recall": 0.021341463414634148,
+        "macro_f1": 0.014227642276422765,
+        "images": 209
+      }
+    },
+    {
+      "run": "stable_transfer_pilot",
+      "best_epoch": 27,
+      "epochs_completed": 35,
+      "validation": {
+        "loss": 3.437280000111703,
+        "top1": 0.3492822966507177,
+        "top5": 0.5502392344497608,
+        "macro_recall": 0.33587398373983735,
+        "macro_f1": 0.309792690172891,
+        "images": 209
+      },
+      "config": {
+        "prepared": "data\\clean_pilot",
+        "data_root": null,
+        "output": "runs\\stable_transfer_pilot",
+        "epochs": 35,
+        "warmup_epochs": 3,
+        "batch_size": 32,
+        "workers": 4,
+        "learning_rate": 0.001,
+        "backbone_learning_rate": 1e-05,
+        "patience": 8,
+        "seed": 42,
+        "device": "cuda",
+        "no_amp": false,
+        "no_pretrained": false,
+        "architecture": "efficientnet_b0",
+        "cudnn_benchmark": false,
+        "update_batchnorm": false
+      },
+      "recorded_train_val_seconds": 289.4460467999452,
+      "steady_epoch_median_seconds": 6.5903092000226025,
+      "first_epoch_seconds": 53.21930009999778,
+      "peak_allocated_vram_mb": 1467.43115234375,
+      "checkpoint_sha256": "3fcf631a8645d2bb4f2d8b790683f67192993443eee270dc38094ea2e3c9ee1e",
+      "test": {
+        "loss": 3.439751571445374,
+        "top1": 0.3157894736842105,
+        "top5": 0.5454545454545454,
+        "macro_recall": 0.2947154471544715,
+        "macro_f1": 0.24588172667440958,
+        "images": 209
+      }
+    }
+  ]
+}

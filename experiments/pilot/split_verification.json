@@ -1,0 +1,6 @@
+{
+  "checked_images": 1375,
+  "cross_split_exact_or_mirror_near_matches": 0,
+  "matches": [],
+  "method": "Independent brute-force comparison against indexed preparation; difference-hash threshold 4."
+}
